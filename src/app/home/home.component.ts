@@ -18,7 +18,10 @@ export class HomeComponent implements OnInit {
     // .then((ofertas: IOferta[]) => this.ofertas = ofertas)
     // .catch((erro) => console.log(erro))
 
-    this.ofertaService.get().subscribe((ofertas: IOferta[]) => this.ofertas = ofertas)
+    this.ofertaService.getOferta({destaque: true})
+    .subscribe(
+      (ofertas: IOferta[]) => this.ofertas = ofertas
+    )
   }
 
 }
