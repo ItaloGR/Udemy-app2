@@ -18,12 +18,11 @@ export class OndeFicaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ofertaService: OfertaService
-  ) { }
-
-  ngOnInit(): void {
+  ) {
     this.$ondeFica = this.ofertaService.getOndeFicaOfertaPorId(
       Number.parseInt(this.route.parent?.snapshot.params['id'] ?? 0)
     )
   }
 
+  ngOnInit(): void {}
 }

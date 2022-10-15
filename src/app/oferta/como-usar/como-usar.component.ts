@@ -16,12 +16,11 @@ export class ComoUsarComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private ofertaService: OfertaService
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.$comoUsar = this.ofertaService.getComoUsarOfertaPorId(
       Number.parseInt(this.route.parent?.snapshot.params['id'] ?? 0)
     )
   }
 
+  ngOnInit(): void {}
 }
